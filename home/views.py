@@ -51,7 +51,6 @@ def home(r):
         Q(name__icontains=q) |
         Q(score__icontains=q) |
         Q(grade__icontains=q) |
-        Q(manager__first_name__icontains=q) |
         Q(manager__username__icontains=q) |
         Q(section__icontains=q) 
 
