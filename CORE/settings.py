@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-!-g@jcs@&_rmd9r7a$05@qsn#enp4%9sr1^j!%-^dw5537bhq)'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["192.168.100.12", '*']
+ALLOWED_HOSTS = ["zaidanstudents.herokuapp.com", '127.0.0.1']
 
 
 # Application definition
@@ -84,10 +84,10 @@ WSGI_APPLICATION = 'CORE.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'StudentManager', 
-        'USER': 'postgres', 
-        'PASSWORD': 'RoyalOmanPolice',
-        'HOST': '127.0.0.1', 
+        'NAME': 'da9rcq3hf963ft', 
+        'USER': 'otbgelurrkgygf', 
+        'PASSWORD': 'c28bf707a47e22fb7d7d14fe7a3b5f81e311909e69705e6e4b540d583e189b13',
+        'HOST': 'ec2-52-207-90-231.compute-1.amazonaws.com', 
         'PORT': '5432',
     }
 }
