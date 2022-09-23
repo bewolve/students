@@ -84,12 +84,13 @@ WSGI_APPLICATION = 'CORE.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dbifbhs52pguo0', 
-        'USER': 'efsvnpotzxrkmg', 
-        'PASSWORD': 'e4b87f6b3a28e56eb7981abdfe24fe63f0db47d620efd3ed96535dcff55087b0',
-        'HOST': 'ec2-3-93-206-109.compute-1.amazonaws.com', 
-        'PORT': '5432',
+         
+         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'HOST': '146.148.94.169',
+        'USER': 'postgres',
+        'PASSWORD': 'RoyalOmanZaidan',
+        'NAME': 'schoolmanagement',
+        
     }
 }
 
