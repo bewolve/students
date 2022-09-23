@@ -51,6 +51,8 @@ def home(r):
         Q(name__icontains=q) |
         Q(score__icontains=q) |
         Q(grade__icontains=q) |
+        Q(bus__bus_route__icontains=q) |
+        Q(bus__driver_name__icontains=q) |
         Q(manager__username__icontains=q) |
         Q(section__icontains=q) 
 
@@ -117,7 +119,7 @@ def bus_home(r):
     return render(r, 'bushome.html', context)
 
 
-
+@login_required(login_url='login')
 def create_bus(r):
 
     if r.method == "POST":
@@ -130,6 +132,8 @@ def create_bus(r):
     context = {'form': form}
     return render (r, 'busform.html', context)
 
+
+@login_required(login_url='login')
 def update_bus(r, pk):
     bus = Bus.objects.get(id=pk)
     form = BusForm(r.POST or None, instance=bus)
@@ -141,6 +145,8 @@ def update_bus(r, pk):
     context = {'form': form}
     return render(r, 'busform.html', context)
 
+
+@login_required(login_url='login')
 def delete_bus(r, pk):
     bus = Bus.objects.get(id=pk)
     if r.method == "POST":
