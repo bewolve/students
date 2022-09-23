@@ -7,6 +7,12 @@
             <div class="title d-flex justify-content-center">
                 <h2>Welcome to <span><img src="{% static 'school.png' %}" alt="Bootstrap" width="60" height="60"></span> Student Manager</h2>
             </div>
+            <div class="searchbar">
+                <form method='GET' action='{% url 'routes-home' %}' class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" name='q' placeholder="Search Buses" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form>
+            </div>
             {% if request.user.is_authenticated %}
             <div class="d-flex my-3 justify-content-center logged">
                 <h5>Logged in as <span style="color:red;">{{request.user.username|title}}</span></h5>

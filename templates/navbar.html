@@ -13,10 +13,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'home' %}">Home</a>
           </li>
-          {% if request.user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'routes-home' %}">Routes</a>
           </li>
+          {% if request.user.is_authenticated %}
+         
           <li class="nav-item">
             <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
@@ -28,7 +29,7 @@
           
         </ul>
         <form method='GET' action='{% url 'home' %}' class="d-flex" role="search">
-          <input class="form-control me-2" type="search" name='q' placeholder="Search" aria-label="Search">
+          <input class="form-control me-2" type="search" name='q' placeholder="Search Students" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
