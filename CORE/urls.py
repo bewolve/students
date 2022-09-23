@@ -22,3 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     
 ]
+
+admin.site.site_header = 'CSS admin Panel'
+admin.site.site_title = 'Admin Panel'
+admin.site.site_title = 'Students adminsitration Panel'
