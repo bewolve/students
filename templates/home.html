@@ -28,8 +28,10 @@
                       <p class="card-text">Enrolled By: <a href="{% url 'home' %}?q={{student.manager}}">{{student.manager}}</a></p>
                       <p class="card-text">Grade: {{student.grade}}</p>
                       <p class="card-text">Score: {{student.score}}</p>
+                      <p class="card-text">Gender: {{student.gender}}</p>
                       <p class="card-text">Enrolled on: {{student.created|date:'d M, Y' }}</p>
                       <p class="card-text">Emergency Contact: {{student.contact}}</p>
+                      <p class="card-text">Bus: {{student.bus}}</p>
                       {% if request.user.is_authenticated %}
                       <a class="btn btn-outline-success" href="{% url 'update-student' student.id %}" role="button">Update</a>
                       <a class="btn btn-outline-danger" href="{% url 'delete-student' student.id %}" role="button">Delete</a>

@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, HttpResponse
 from django.db.models import Q
-from .models import Student
-from .forms import StudentForm
+from .models import Student, Bus
+from .forms import StudentForm, BusForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 
@@ -99,3 +99,53 @@ def update_student(r, pk):
 
     context = {'form': form}
     return render(r, 'studentform.html', context)
+
+
+
+def bus_home(r):
+    q = r.GET.get('q') if r.GET.get('q') != None else ''
+    buses = Bus.objects.filter(
+
+        Q(driver_name__icontains=q) |
+        Q(bus_number__icontains=q) |
+        Q(bus_route__icontains=q) |
+        Q(driver_number__icontains=q) 
+
+    )
+
+    context = {'buses': buses}
+    return render(r, 'bushome.html', context)
+
+
+
+def create_bus(r):
+
+    if r.method == "POST":
+        form = BusForm(r.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("routes-home")
+
+    form = BusForm()
+    context = {'form': form}
+    return render (r, 'busform.html', context)
+
+def update_bus(r, pk):
+    bus = Bus.objects.get(id=pk)
+    form = BusForm(r.POST or None, instance=bus)
+    
+    if form.is_valid():
+        form.save()
+        return redirect("routes-home")
+
+    context = {'form': form}
+    return render(r, 'busform.html', context)
+
+def delete_bus(r, pk):
+    bus = Bus.objects.get(id=pk)
+    if r.method == "POST":
+        bus = Bus.objects.filter(id=pk)
+        bus.delete()
+        return redirect("routes-home")
+    context = {"obj": bus}
+    return render(r, 'deleteobj.html', context)
