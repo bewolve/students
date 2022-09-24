@@ -83,16 +83,23 @@ WSGI_APPLICATION = 'CORE.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-         
+
+     'default': {
+
          'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': '146.148.94.169',
-        'USER': 'postgres',
-        'PASSWORD': 'RoyalOmanZaidan',
-        'NAME': 'schoolmanagement',
-        
-    }
-}
+
+         'NAME': 'xfmnzbyv',
+
+         'USER': 'xfmnzbyv',
+
+         'PASSWORD': 'YEsOskDJ1cHDEYMKAfiNZXPDMp38czdk',
+
+         'HOST': 'tyke.db.elephantsql.com',
+
+         'PORT': '5432',
+
+     }
+ }
 
 
 # Password validation
