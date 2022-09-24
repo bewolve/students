@@ -82,6 +82,9 @@ WSGI_APPLICATION = 'CORE.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
+
+#USES ELEPHANTSQL 20MB for this project
+
 DATABASES = {
 
      'default': {
